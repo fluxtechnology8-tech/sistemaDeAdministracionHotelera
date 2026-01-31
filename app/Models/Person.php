@@ -18,7 +18,7 @@ class Person extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     // quien tiene la FK se le pone belongsTo

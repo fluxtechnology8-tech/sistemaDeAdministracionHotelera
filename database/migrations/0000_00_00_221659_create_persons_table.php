@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone', 15)->unique();
             $table->date('born_date');
             $table->enum('gender', ['M', 'F']);
+            $table->foreignId('user_id')->constrained('users', 'id')->cascadeOnDelete();
             $table->timestamps();
         });
     }
