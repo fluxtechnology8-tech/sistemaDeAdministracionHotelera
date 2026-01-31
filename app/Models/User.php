@@ -20,10 +20,18 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
     ];
+
+    // quien tiene la FK se le pone belongsTo
+    // quien NO tiene la FK se le pone has*
+
+    public function person()
+    {
+        return $this->belongsTo(Person::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
